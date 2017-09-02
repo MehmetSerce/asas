@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+            //deneme
 			MessageBox.Show("merhaba");
 		}
 	}
