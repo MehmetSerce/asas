@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 		private void button1_Click(object sender, EventArgs e)
 		{
             //deneme2398459090
-            MessageBox.Show("merhaba")
+            MessageBox.Show("merhaba");
 		}
 	}
 }
