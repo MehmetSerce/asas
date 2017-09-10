@@ -19,7 +19,7 @@ namespace Testiing
     public class UnitTest
     {
         
-        //[TestCase]
+        //[TestCase]--
         //public void testBrowserStack()
         //{
         //    var driver = new FirefoxDriver();
@@ -64,7 +64,7 @@ namespace Testiing
             driver.Options.ActiveXNative = true;
             driver.Options.CssEnabled = true;
             HtmlPage page = driver.GetHtmlPage("https://www.expedia.com/");
-
+            driver.GetPage().
             Assert.AreEqual("Google", page.TitleText);
         }
 
