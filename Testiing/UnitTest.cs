@@ -32,7 +32,7 @@ namespace Testiing
             string title = driver.Title;
             driver.Quit();
             driver.Close();
-            Assert.AreEqual("Google2", page.TitleText);
+            Assert.AreEqual("Google2", title);
 
             /*
             IWebDriver driver;
