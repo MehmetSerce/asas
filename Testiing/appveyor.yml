@@ -1,0 +1,2 @@
+﻿install:
+  - choco install firefox --version 46.0.1

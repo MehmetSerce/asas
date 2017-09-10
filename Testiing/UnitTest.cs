@@ -47,7 +47,7 @@ namespace Testiing
             driver = new RemoteWebDriver(
               new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
             );
-            driver.Navigate().GoToUrl("http://www.google.com");
+            driver.Navigate().GoToUrl("https://www.google.com");
             Console.WriteLine(driver.Title);
 
             IWebElement query = driver.FindElement(By.Name("q"));
