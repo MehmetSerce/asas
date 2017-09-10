@@ -149,5 +149,11 @@
   <ItemGroup>
     <Content Include="TextFile1.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XmlOku\XmlOku.csproj">
+      <Project>{68f76ac5-0e9b-4a06-9ddd-59122baa09b0}</Project>
+      <Name>XmlOku</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
