@@ -18,10 +18,10 @@ namespace Testiing
     [TestFixture]
     public class UnitTest
     {
-        
-        //[TestCase]--
-        //public void testBrowserStack()
-        //{
+
+        [TestCase]
+        public void testBrowserStack()
+        {
         //    var driver = new FirefoxDriver();
         //    var driverService = FirefoxDriverService.CreateDefaultService();
         //    driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
@@ -34,27 +34,27 @@ namespace Testiing
         //    driver.Close();
         //    Assert.AreEqual("Google2", title);
 
-        //    /*
-        //    IWebDriver driver;
-        //    DesiredCapabilities capability = DesiredCapabilities.Firefox();
-        //    capability.SetCapability("browserstack.user", "mehmetserce1");
-        //    capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
-        //    driver = new RemoteWebDriver(
-        //      new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
-        //    );
-        //    driver.Navigate().GoToUrl("http://www.google.com");
-        //    Console.WriteLine(driver.Title);
+        IWebDriver driver;
+        DesiredCapabilities capability = DesiredCapabilities.Firefox();
+        capability.SetCapability("browserstack.user", "mehmetserce1");
+        capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
-        //    IWebElement query = driver.FindElement(By.Name("q"));
-        //    query.SendKeys("Browserstack");
-        //    query.Submit();
-        //    Console.WriteLine(driver.Title);
+        driver = new RemoteWebDriver(
+          new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
+        );
+        driver.Navigate().GoToUrl("http://www.google.com");
+        Console.WriteLine(driver.Title);
 
-        //    driver.Quit();*/
-        //}
+        IWebElement query = driver.FindElement(By.Name("q"));
+        query.SendKeys("Browserstack");
+        query.Submit();
+        Console.WriteLine(driver.Title);
 
-        [TestCase]
+        driver.Quit();
+        }
+
+    [TestCase]
         public void test1()
         {
             NHtmlUnit.WebClient driver=null;
