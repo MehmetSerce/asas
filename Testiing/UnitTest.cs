@@ -52,7 +52,7 @@ namespace Testiing
             //Son satır okunduktan sonra okuma işlemini bitirdik
             sw.Close();
             fs.Close();
-            Assert.AreEqual(1, 1);
+            Assert.AreEqual(1, yazi);
         }
     }
 }
