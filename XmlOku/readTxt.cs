@@ -11,8 +11,8 @@ namespace XmlOku
     {
         public static string readtxtfile()
         {
-             //string dosya_yolu = "C:\\projects\\asas\\Testiing\\TextFile1.txt";
-           string dosya_yolu = "C:\\Users\\User\\source\\repos\\WindowsFormsApp1\\Testiing\\TextFile1.txt";
+             string dosya_yolu = "C:\\projects\\asas\\Testiing\\TextFile1.txt";
+          // string dosya_yolu = "C:\\Users\\User\\source\\repos\\WindowsFormsApp1\\Testiing\\TextFile1.txt";
 
             //Okuma işlem yapacağımız dosyanın yolunu belirtiyoruz.
             FileStream fs = new FileStream(dosya_yolu, FileMode.Open, FileAccess.Read);
