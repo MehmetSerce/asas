@@ -16,15 +16,14 @@ namespace Testiing
         public void test1()
         {
             NHtmlUnit.WebClient driver = new NHtmlUnit.WebClient();
-
+           
             driver.Options.JavaScriptEnabled = true;
-            driver.Options.ThrowExceptionOnScriptError = false;
+           driver.Options.ThrowExceptionOnScriptError = false;
             driver.Options.ActiveXNative = true;
             driver.Options.CssEnabled = true;
+            HtmlPage page = driver.GetHtmlPage("https://www.sahibinden.com/");
 
-            HtmlPage page = driver.GetHtmlPage("https://www.google.com.tr");
-
-            Assert.AreNotEqual("Google", page.TitleText);
+            Assert.AreEqual("Google", page.TitleText);
         }
 
         [TestCase]
