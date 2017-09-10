@@ -64,7 +64,6 @@ namespace Testiing
             driver.Options.ActiveXNative = true;
             driver.Options.CssEnabled = true;
             HtmlPage page = driver.GetHtmlPage("https://www.expedia.com/");
-
             Assert.AreEqual("Google", page.TitleText);
         }
 
