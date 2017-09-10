@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\bin\Debug\XmlOku.dll
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\bin\Debug\XmlOku.pdb
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\obj\Debug\XmlOku.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\obj\Debug\XmlOku.dll
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\obj\Debug\XmlOku.pdb
+C:\Users\User\source\repos\WindowsFormsApp1\XmlOku\obj\Debug\XmlOku.csprojResolveAssemblyReference.cache
