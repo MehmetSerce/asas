@@ -21,6 +21,9 @@ namespace WindowsFormsApp1
 		{
             //deneme2398459090
             MessageBox.Show("merhaba");
+
+
+
 		}
 	}
 }

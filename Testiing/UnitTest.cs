@@ -3,6 +3,8 @@ using NHtmlUnit;
 using NHtmlUnit.Html;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +18,36 @@ namespace Testiing
     [TestFixture]
     public class UnitTest
     {
+        [TestCase]
+        public void testBrowserStack()
+        {
+            var driver = new FirefoxDriver();
+            var driverService = FirefoxDriverService.CreateDefaultService();
+            driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            driverService.HideCommandPromptWindow = true;
+            driverService.SuppressInitialDiagnosticInformation = true;
+            driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
+            driver.Quit();
+            /*
+            IWebDriver driver;
+            DesiredCapabilities capability = DesiredCapabilities.Firefox();
+            capability.SetCapability("browserstack.user", "mehmetserce1");
+            capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+
+            driver = new RemoteWebDriver(
+              new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
+            );
+            driver.Navigate().GoToUrl("http://www.google.com");
+            Console.WriteLine(driver.Title);
+
+            IWebElement query = driver.FindElement(By.Name("q"));
+            query.SendKeys("Browserstack");
+            query.Submit();
+            Console.WriteLine(driver.Title);
+
+            driver.Quit();*/
+        }
+
         [TestCase]
         public void test1()
         {
