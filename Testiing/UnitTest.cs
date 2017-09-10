@@ -23,7 +23,7 @@ namespace Testiing
         {
             var driver = new FirefoxDriver();
             var driverService = FirefoxDriverService.CreateDefaultService();
-            driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox67\firefox.exe";
             driverService.HideCommandPromptWindow = true;
             driverService.SuppressInitialDiagnosticInformation = true;
             driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
