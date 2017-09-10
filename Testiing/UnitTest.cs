@@ -28,7 +28,7 @@ namespace Testiing
             driverService.HideCommandPromptWindow = true;
             driverService.SuppressInitialDiagnosticInformation = true;
             driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
-            driver.Navigate().GoToUrl("http://www.google.com");
+            driver.Navigate().GoToUrl("https://www.google.com");
             string title = driver.Title;
             driver.Quit();
             driver.Close();
