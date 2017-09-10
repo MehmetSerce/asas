@@ -18,7 +18,41 @@ namespace Testiing
     [TestFixture]
     public class UnitTest
     {
-       
+        
+        [TestCase]
+        public void testBrowserStack()
+        {
+            var driver = new FirefoxDriver();
+            var driverService = FirefoxDriverService.CreateDefaultService();
+            driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            driverService.HideCommandPromptWindow = true;
+            driverService.SuppressInitialDiagnosticInformation = true;
+            driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
+            driver.Navigate().GoToUrl("http://www.google.com");
+            string title = driver.Title;
+            driver.Quit();
+            driver.Close();
+            Assert.AreEqual("Google2", page.TitleText);
+
+            /*
+            IWebDriver driver;
+            DesiredCapabilities capability = DesiredCapabilities.Firefox();
+            capability.SetCapability("browserstack.user", "mehmetserce1");
+            capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+
+            driver = new RemoteWebDriver(
+              new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
+            );
+            driver.Navigate().GoToUrl("http://www.google.com");
+            Console.WriteLine(driver.Title);
+
+            IWebElement query = driver.FindElement(By.Name("q"));
+            query.SendKeys("Browserstack");
+            query.Submit();
+            Console.WriteLine(driver.Title);
+
+            driver.Quit();*/
+        }
 
         [TestCase]
         public void test1()
