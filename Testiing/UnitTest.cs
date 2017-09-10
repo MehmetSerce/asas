@@ -36,13 +36,13 @@ namespace Testiing
 
 
             IWebDriver driver;
-            //DesiredCapabilities capability = DesiredCapabilities.Firefox();
-            //capability.SetCapability("browserstack.user", "mehmetserce1");
-            //capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+            DesiredCapabilities capability = DesiredCapabilities.Firefox();
+            capability.SetCapability("browserstack.user", "mehmetserce1");
+            capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
-            FirefoxOptions capability = new FirefoxOptions();
-            capability.AddAdditionalCapability("browserstack.user", "mehmetserce1");
-            capability.AddAdditionalCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+            //FirefoxOptions capability = new FirefoxOptions();
+            //capability.AddAdditionalCapability("browserstack.user", "mehmetserce1");
+            //capability.AddAdditionalCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
             driver = new RemoteWebDriver(
               new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
