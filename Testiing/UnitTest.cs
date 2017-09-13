@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using XmlOku;
 
@@ -19,44 +20,44 @@ namespace Testiing
     public class UnitTest
     {
         //
-        [TestCase]
-        public void testBrowserStack()
-        {
-            //var driver = new FirefoxDriver();
-            //var driverService = FirefoxDriverService.CreateDefaultService();
-            //driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
-            //driverService.HideCommandPromptWindow = true;
-            //driverService.SuppressInitialDiagnosticInformation = true;
-            //driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
-            //driver.Navigate().GoToUrl("https://www.google.com");
-            //string title = driver.Title;
-            //driver.Quit();
-            //driver.Close();
-            //Assert.AreEqual("Google2", title);
+        //[TestCase]
+        //public void testBrowserStack()
+        //{
+        //    //var driver = new FirefoxDriver();
+        //    //var driverService = FirefoxDriverService.CreateDefaultService();
+        //    //driverService.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+        //    //driverService.HideCommandPromptWindow = true;
+        //    //driverService.SuppressInitialDiagnosticInformation = true;
+        //    //driver = new FirefoxDriver(driverService, new FirefoxOptions(), TimeSpan.FromSeconds(60));
+        //    //driver.Navigate().GoToUrl("https://www.google.com");
+        //    //string title = driver.Title;
+        //    //driver.Quit();
+        //    //driver.Close();
+        //    //Assert.AreEqual("Google2", title);
 
 
-            IWebDriver driver;
-            DesiredCapabilities capability = DesiredCapabilities.Firefox();
-            capability.SetCapability("browserstack.user", "mehmetserce1");
-            capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+        //    IWebDriver driver;
+        //    DesiredCapabilities capability = DesiredCapabilities.Firefox();
+        //    capability.SetCapability("browserstack.user", "mehmetserce1");
+        //    capability.SetCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
-            //FirefoxOptions capability = new FirefoxOptions();
-            //capability.AddAdditionalCapability("browserstack.user", "mehmetserce1");
-            //capability.AddAdditionalCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
+        //    //FirefoxOptions capability = new FirefoxOptions();
+        //    //capability.AddAdditionalCapability("browserstack.user", "mehmetserce1");
+        //    //capability.AddAdditionalCapability("browserstack.key", "fxrxXXDT9xYmgkLSzqLs");
 
-            driver = new RemoteWebDriver(
-              new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
-            );
-            driver.Navigate().GoToUrl("https://www.google.com");
-            Console.WriteLine(driver.Title);
+        //    driver = new RemoteWebDriver(
+        //      new Uri("http://hub-cloud.browserstack.com/wd/hub/"), capability
+        //    );
+        //    driver.Navigate().GoToUrl("https://www.google.com");
+        //    Console.WriteLine(driver.Title);
 
-            IWebElement query = driver.FindElement(By.Name("q"));
-            query.SendKeys("Browserstack");
-            query.Submit();
-            Console.WriteLine(driver.Title);
+        //    IWebElement query = driver.FindElement(By.Name("q"));
+        //    query.SendKeys("Browserstack");
+        //    query.Submit();
+        //    Console.WriteLine(driver.Title);
 
-            driver.Quit();
-        }
+        //    driver.Quit();
+        //}
 
     [TestCase]
         public void test1()
@@ -68,6 +69,9 @@ namespace Testiing
             driver.Options.ActiveXNative = true;
             driver.Options.CssEnabled = true;
             HtmlPage page = driver.GetHtmlPage("https://www.expedia.com/");
+            Thread.Sleep(5000);
+            var sp = page.GetFirstByXPath("//*[@id=\"tab - hotel - tab - hp\"]/span[2]");
+
             Assert.AreEqual("Google", page.TitleText);
         }
 
